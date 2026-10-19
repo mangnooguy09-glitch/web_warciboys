@@ -455,6 +455,13 @@
             transform: scale(1.03);
         }
 
+        /* PERBAIKAN CROP FOTO PANTAI */
+        .gallery-item.foto-pantai img {
+            height: 250px;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
         /* Responsive Columns untuk Masonry Grid */
         @media (max-width: 992px) {
             .gallery-masonry {
@@ -465,6 +472,9 @@
         @media (max-width: 600px) {
             .gallery-masonry {
                 column-count: 1;
+            }
+            .gallery-item.foto-pantai img {
+                height: 220px;
             }
         }
 
@@ -791,7 +801,7 @@
         </div>
     </section>
 
-    <!-- SECTION FOTO BERSAMA (MASONRY LAYOUT) -->
+    <!-- SECTION FOTO BERSAMA -->
     <section class="content-section" id="foto-bersama">
         <div class="section-header reveal">
             <h2>FOTO BERSAMA</h2>
@@ -801,7 +811,7 @@
             <div class="gallery-item reveal">
                 <img src="https://i.ibb.co.com/8LLS1LbF/Whats-App-Image-2026-10-15-at-18-36-40.jpg" alt="Foto Jas Formal">
             </div>
-            <div class="gallery-item reveal">
+            <div class="gallery-item foto-pantai reveal">
                 <img src="https://i.ibb.co.com/8D687wdr/Whats-App-Image-2026-10-15-at-19-04-49.jpg" alt="Foto Pantai">
             </div>
             <div class="gallery-item reveal">
