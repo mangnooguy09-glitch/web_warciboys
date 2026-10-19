@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WARCI BOYS</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* ==========================================================================
+           1. RESET & GLOBAL STYLES
+           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +41,9 @@
             padding-bottom: 60px;
         }
 
-        /* CINEMATIC SPLASH SCREEN */
+        /* ==========================================================================
+           2. PRELOADER / SPLASH SCREEN
+           ========================================================================== */
         #preloader {
             position: fixed;
             top: 0;
@@ -75,30 +83,26 @@
             font-family: 'Cinzel', serif;
         }
 
-        @keyframes pulseGlow {
-            from { transform: scale(0.95); opacity: 0.8; }
-            to { transform: scale(1.05); opacity: 1; }
-        }
-
         .preloader-hidden {
             opacity: 0;
             visibility: hidden;
         }
 
-        /* Hero Container */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 2rem 5%;
-            background: linear-gradient(180deg, rgba(11, 12, 16, 0.75) 0%, rgba(11, 12, 16, 0.85) 60%, #0b0c10 100%),
-                        url('https://i.ibb.co/WvS7T38p/WhatsApp-Image-2026-10-15-at-13-42-21.jpg') center/cover no-repeat;
+        @keyframes pulseGlow {
+            from {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            to {
+                transform: scale(1.05);
+                opacity: 1;
+            }
         }
 
-        /* Navigation Header Desktop */
+        /* ==========================================================================
+           3. NAVIGATION
+           ========================================================================== */
+        /* Desktop Header Nav */
         nav {
             position: fixed;
             top: 0;
@@ -148,14 +152,13 @@
             text-decoration: none;
             font-size: 0.85rem;
             letter-spacing: 1px;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #ffffff;
         }
 
-        /* Instagram Link Button */
         .ig-link {
             display: inline-flex;
             align-items: center;
@@ -182,7 +185,7 @@
             box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
         }
 
-        /* FLOATING MOBILE BOTTOM NAVIGATION */
+        /* Mobile Bottom Nav */
         .mobile-bottom-nav {
             display: none;
             position: fixed;
@@ -206,8 +209,6 @@
             justify-content: space-between;
             align-items: center;
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
 
         .mobile-bottom-nav a {
@@ -218,7 +219,7 @@
             flex-direction: column;
             align-items: center;
             gap: 4px;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .mobile-bottom-nav a i {
@@ -230,7 +231,21 @@
             color: #d4af37;
         }
 
-        /* Hero Content */
+        /* ==========================================================================
+           4. HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem 5%;
+            background: linear-gradient(180deg, rgba(11, 12, 16, 0.75) 0%, rgba(11, 12, 16, 0.85) 60%, #0b0c10 100%),
+                        url('https://i.ibb.co/WvS7T38p/WhatsApp-Image-2026-10-15-at-13-42-21.jpg') center/cover no-repeat;
+        }
+
         .hero-content {
             max-width: 650px;
             margin-top: 120px;
@@ -264,7 +279,6 @@
             max-width: 500px;
         }
 
-        /* Buttons */
         .btn-group {
             display: flex;
             gap: 1rem;
@@ -283,7 +297,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .btn-primary:hover {
@@ -299,14 +313,13 @@
             font-weight: 600;
             font-size: 0.85rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: background-color 0.2s;
+            transition: background-color 0.2s ease;
         }
 
         .btn-secondary:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Footer Info Bar */
         .footer-bar {
             display: flex;
             justify-content: space-between;
@@ -320,7 +333,9 @@
             z-index: 10;
         }
 
-        /* Section Layouts General */
+        /* ==========================================================================
+           5. CONTENT SECTIONS GENERAL
+           ========================================================================== */
         section.content-section {
             padding: 6rem 5% 4rem 5%;
             max-width: 1200px;
@@ -344,7 +359,9 @@
             font-size: 0.9rem;
         }
 
-        /* Section Anggota Grid */
+        /* ==========================================================================
+           6. SECTION ANGGOTA
+           ========================================================================== */
         .members-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -357,7 +374,7 @@
             border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .member-card:hover {
@@ -393,14 +410,16 @@
             font-size: 0.8rem;
             color: #d4af37;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .member-ig:hover {
             color: #ffffff;
         }
 
-        /* GALERI GRID STANDAR (RAPI, KOTAK SERAGAM, TANPA BENTO) */
+        /* ==========================================================================
+           7. SECTION GALERI FOTO BERSAMA
+           ========================================================================== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -413,9 +432,9 @@
             overflow: hidden;
             background: #14161d;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            height: 280px; /* Ukuran tinggi kotak galeri seragam */
+            height: 280px;
             cursor: pointer;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
@@ -437,7 +456,33 @@
             transform: scale(1.04);
         }
 
-        /* VIRTUAL GUESTBOOK (BUKU TAMU DIGITAL) */
+        /* ==========================================================================
+           8. SECTION PENUTUP & VIRTUAL GUESTBOOK
+           ========================================================================== */
+        .penutup-box {
+            background: linear-gradient(135deg, #14161d 0%, #1a1d27 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .penutup-box p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .penutup-box h4 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
         .guestbook-box {
             background: #14161d;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -447,6 +492,20 @@
             margin: 3rem auto 0 auto;
         }
 
+        .guestbook-box h3 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .guestbook-box .sub-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
         .guestbook-form {
             display: flex;
             flex-direction: column;
@@ -454,7 +513,8 @@
             margin-bottom: 2rem;
         }
 
-        .guestbook-form input, .guestbook-form textarea {
+        .guestbook-form input,
+        .guestbook-form textarea {
             width: 100%;
             padding: 0.9rem 1.2rem;
             background: #0b0c10;
@@ -464,10 +524,11 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.9rem;
             outline: none;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s ease;
         }
 
-        .guestbook-form input:focus, .guestbook-form textarea:focus {
+        .guestbook-form input:focus,
+        .guestbook-form textarea:focus {
             border-color: #d4af37;
         }
 
@@ -485,7 +546,7 @@
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .submit-btn:hover {
@@ -521,32 +582,9 @@
             line-height: 1.5;
         }
 
-        /* Section Penutup */
-        .penutup-box {
-            background: linear-gradient(135deg, #14161d 0%, #1a1d27 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 3rem 2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .penutup-box p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .penutup-box h4 {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
-            color: #d4af37;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Scroll Reveal Animation */
+        /* ==========================================================================
+           9. LIGHTBOX MODAL & ANIMATIONS
+           ========================================================================== */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -558,7 +596,6 @@
             transform: translateY(0);
         }
 
-        /* Lightbox Modal */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -594,24 +631,29 @@
             color: #ffffff;
             font-size: 2.5rem;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .lightbox-close:hover {
             color: #d4af37;
         }
 
-        /* Mobile Responsive Adjustment */
+        /* ==========================================================================
+           10. MEDIA QUERIES / RESPONSIVE
+           ========================================================================== */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
+
             .mobile-bottom-nav {
                 display: block;
             }
+
             .hero {
                 padding: 1.5rem 6%;
             }
+
             .footer-bar {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -654,9 +696,7 @@
         <!-- Main Hero Content -->
         <div class="hero-content">
             <p class="subtitle">EST 2025 - UNTIL FOREVER</p>
-            <h1 class="main-title">
-                WARCI BOYS
-            </h1>
+            <h1 class="main-title">WARCI BOYS</h1>
             <p class="description">
                 Waktu mungkin udah bawa kita ke jalan masing-masing, tapi kenangan dan kehangatannya bakal selalu nemenin di sini.
             </p>
@@ -739,7 +779,7 @@
         </div>
     </section>
 
-    <!-- SECTION FOTO BERSAMA (GRID STANDAR RAPI) -->
+    <!-- SECTION FOTO BERSAMA -->
     <section class="content-section" id="foto-bersama">
         <div class="section-header reveal">
             <h2>FOTO BERSAMA</h2>
@@ -779,10 +819,10 @@
             </a>
         </div>
 
-        <!-- VIRTUAL GUESTBOOK (BUKU TAMU DIGITAL) -->
+        <!-- VIRTUAL GUESTBOOK -->
         <div class="guestbook-box reveal">
-            <h3 style="font-family: 'Cinzel', serif; color: #d4af37; margin-bottom: 0.5rem; text-align: center;">BUKU KESAN & PESAN</h3>
-            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-align: center; margin-bottom: 1.5rem;">Tinggalkan catatan atau pesan singkat untuk angkatan kita.</p>
+            <h3>BUKU KESAN & PESAN</h3>
+            <p class="sub-desc">Tinggalkan catatan atau pesan singkat untuk angkatan kita.</p>
             
             <form class="guestbook-form" id="guestbookForm">
                 <input type="text" id="senderName" placeholder="Nama Kamu / Panggilan..." required>
@@ -815,8 +855,9 @@
         <img id="lightboxImg" src="" alt="Zoomed Photo">
     </div>
 
-    <!-- JAVASCRIPT SCRIPTS -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Preloader Hiding Logic
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
@@ -824,14 +865,14 @@
             }, 1000);
         });
 
+        // Scroll Reveal Animation
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal');
             const windowHeight = window.innerHeight;
+            const revealPoint = 100;
             
             reveals.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 100;
-                
                 if (elementTop < windowHeight - revealPoint) {
                     element.classList.add('active');
                 }
@@ -841,6 +882,7 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
+        // Lightbox Popup Logic
         const lightboxModal = document.getElementById('lightboxModal');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
@@ -863,15 +905,19 @@
             }
         });
 
+        // Virtual Guestbook Form Submission
         const guestbookForm = document.getElementById('guestbookForm');
         const messagesContainer = document.getElementById('messagesContainer');
 
         guestbookForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('senderName').value;
-            const message = document.getElementById('senderMessage').value;
+            const nameInput = document.getElementById('senderName');
+            const messageInput = document.getElementById('senderMessage');
 
-            if (name.trim() && message.trim()) {
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (name && message) {
                 const card = document.createElement('div');
                 card.className = 'message-card';
                 card.innerHTML = `<h5>${escapeHtml(name)}</h5><p>${escapeHtml(message)}</p>`;
@@ -881,9 +927,16 @@
             }
         });
 
+        // HTML Sanitization Helper Function
         function escapeHtml(text) {
-            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+            const map = { 
+                '&': '&amp;', 
+                '<': '&lt;', 
+                '>': '&gt;', 
+                '"': '&quot;', 
+                "'": '&#039;' 
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
         }
     </script>
 </body>
