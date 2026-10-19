@@ -102,7 +102,6 @@
         /* ==========================================================================
            3. NAVIGATION
            ========================================================================== */
-        /* Desktop Header Nav */
         nav {
             position: fixed;
             top: 0;
@@ -114,7 +113,7 @@
             width: 100%;
             padding: 1.2rem 5%;
             z-index: 100;
-            background: rgba(11, 12, 16, 0.6);
+            background: rgba(11, 12, 16, 0.7);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -156,7 +155,7 @@
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: #d4af37;
         }
 
         .ig-link {
@@ -257,7 +256,7 @@
         .subtitle {
             font-size: 0.75rem;
             letter-spacing: 4px;
-            color: rgba(255, 255, 255, 0.6);
+            color: #d4af37;
             text-transform: uppercase;
             margin-bottom: 0.8rem;
         }
@@ -287,7 +286,7 @@
         }
 
         .btn-primary {
-            background-color: #ffffff;
+            background-color: #d4af37;
             color: #0b0c10;
             padding: 0.75rem 1.6rem;
             border-radius: 25px;
@@ -297,11 +296,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: transform 0.2s ease, background-color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
-            background-color: #e2e8f0;
+            background-color: #ffffff;
             transform: translateY(-2px);
         }
 
@@ -334,7 +333,7 @@
         }
 
         /* ==========================================================================
-           5. CONTENT SECTIONS GENERAL
+           5. GENERAL CONTENT SECTIONS
            ========================================================================== */
         section.content-section {
             padding: 6rem 5% 4rem 5%;
@@ -418,12 +417,12 @@
         }
 
         /* ==========================================================================
-           7. SECTION GALERI FOTO BERSAMA
+           7. SECTION FOTO BERSAMA (FIXED: FOTO RAPI TANPA TERPOTONG)
            ========================================================================== */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
         }
 
         .gallery-item {
@@ -432,28 +431,34 @@
             overflow: hidden;
             background: #14161d;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            height: 280px;
+            /* Aspect ratio 4/3 agar bentuk proporsional & tidak terpotong */
+            aspect-ratio: 4 / 3;
+            width: 100%;
             cursor: pointer;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 12px 30px -5px rgba(212, 175, 55, 0.25);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
+            /*
+               - object-fit: cover agar mengisi kotak dengan indah
+               - object-position: top center agar bagian ATAS FOTO (WAJAH) tidak terpotong!
+            */
             object-fit: cover;
-            object-position: center;
+            object-position: top center;
             display: block;
             transition: transform 0.5s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         /* ==========================================================================
@@ -538,7 +543,7 @@
         }
 
         .submit-btn {
-            background: #ffffff;
+            background: #d4af37;
             color: #0b0c10;
             border: none;
             padding: 0.8rem;
@@ -550,7 +555,7 @@
         }
 
         .submit-btn:hover {
-            background: #d4af37;
+            background: #ffffff;
             transform: translateY(-2px);
         }
 
@@ -583,7 +588,7 @@
         }
 
         /* ==========================================================================
-           9. LIGHTBOX MODAL & ANIMATIONS
+           9. LIGHTBOX MODAL & REVEAL ANIMATION
            ========================================================================== */
         .reveal {
             opacity: 0;
@@ -603,7 +608,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.92);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -658,6 +663,10 @@
                 flex-direction: column;
                 gap: 0.5rem;
                 text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
     </style>
@@ -832,7 +841,7 @@
 
             <div class="messages-container" id="messagesContainer">
                 <div class="message-card">
-                    <h5>KING NOPAL</h5>
+                    ##### KING NOPAL
                     <p>Tetap solid walau sibuk masing-masing, Warci Boys selamanya!</p>
                 </div>
             </div>
@@ -857,19 +866,19 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Preloader Hiding Logic
+        // Preloader Logic
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.classList.add('preloader-hidden');
-            }, 1000);
+            }, 800);
         });
 
         // Scroll Reveal Animation
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal');
             const windowHeight = window.innerHeight;
-            const revealPoint = 100;
+            const revealPoint = 80;
             
             reveals.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -882,7 +891,7 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // Lightbox Popup Logic
+        // Lightbox Popup
         const lightboxModal = document.getElementById('lightboxModal');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
@@ -905,7 +914,7 @@
             }
         });
 
-        // Virtual Guestbook Form Submission
+        // Guestbook Form
         const guestbookForm = document.getElementById('guestbookForm');
         const messagesContainer = document.getElementById('messagesContainer');
 
@@ -927,7 +936,6 @@
             }
         });
 
-        // HTML Sanitization Helper Function
         function escapeHtml(text) {
             const map = { 
                 '&': '&amp;', 
