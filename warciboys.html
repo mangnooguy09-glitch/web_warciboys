@@ -359,7 +359,7 @@
         }
 
         /* ==========================================================================
-           6. SECTION ANGGOTA (KOTAK UNIFORM & INTERAKTIF)
+           6. SECTION ANGGOTA (KOTAK VERTIKAL PANJANG YANG RAPI)
            ========================================================================== */
         .members-grid {
             display: grid;
@@ -386,10 +386,10 @@
             box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.15);
         }
 
-        /* Pembungkus Foto dengan Rasio Simetris */
+        /* Pembungkus Foto Diperpanjang Menjadi Rasio Vertikal 3 / 4 */
         .member-photo-wrapper {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 3 / 4;
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 1rem;
@@ -970,7 +970,6 @@
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
         
-        // Memilih semua gambar baik di Galeri Foto Bersama maupun Profil Anggota
         const allClickableImages = document.querySelectorAll('.gallery-item img, .member-photo');
 
         allClickableImages.forEach(img => {
