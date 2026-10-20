@@ -359,20 +359,24 @@
         }
 
         /* ==========================================================================
-           6. SECTION ANGGOTA (KOTAK RAPI ELEGAN)
+           6. SECTION ANGGOTA (KOTAK UNIFORM & INTERAKTIF)
            ========================================================================== */
         .members-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
         }
 
         .member-card {
             background: #14161d;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 16px;
+            padding: 1.2rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -382,35 +386,50 @@
             box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.15);
         }
 
-        /* Style Foto Kotak Rapi (Sama Ukurannya) */
-        .member-photo {
+        /* Pembungkus Foto dengan Rasio Simetris */
+        .member-photo-wrapper {
             width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 8px;
+            aspect-ratio: 4 / 3;
+            border-radius: 10px;
+            overflow: hidden;
             margin-bottom: 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            display: block;
-        }
-
-        .member-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            background: #0b0c10;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem auto;
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .member-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .member-avatar {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .member-card h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 0.4rem;
+            line-height: 1.3;
         }
 
         .member-ig {
@@ -754,64 +773,96 @@
         </div>
         <div class="members-grid">
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/jv9J7cyT/khairul.jpg" alt="Khairul Ramadhan" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/jv9J7cyT/khairul.jpg" alt="Khairul Ramadhan" class="member-photo">
+                </div>
                 <h3>Khairul Ramadhan</h3>
                 <a href="https://instagram.com/_rlkh.aii" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @_rlkh.aii</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/yFtgS9Ys/Reyhan-Rizky-Ramadhan.jpg" alt="Reyhan Rizky Ramadhan" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/yFtgS9Ys/Reyhan-Rizky-Ramadhan.jpg" alt="Reyhan Rizky Ramadhan" class="member-photo">
+                </div>
                 <h3>Reyhan Rizky Ramadhan</h3>
                 <a href="https://instagram.com/reyhanrr" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @reyhanrr</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/qYhqsx5x/Fajar-Maulana.jpg" alt="Fajar Maulana" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/qYhqsx5x/Fajar-Maulana.jpg" alt="Fajar Maulana" class="member-photo">
+                </div>
                 <h3>Fajar Maulana</h3>
                 <a href="https://instagram.com/fajarmlna" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @fajarmlna</a>
             </div>
+
             <div class="member-card reveal">
-                <div class="member-avatar">WB</div>
+                <div class="member-photo-wrapper">
+                    <div class="member-avatar">WB</div>
+                </div>
                 <h3>Teguh Agung Saputra</h3>
                 <a href="https://instagram.com/teguhagungs" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @teguhagungs</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/XrySJkD4/Chiko.jpg" alt="Chiko" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/XrySJkD4/Chiko.jpg" alt="Chiko" class="member-photo">
+                </div>
                 <h3>Chiko</h3>
                 <a href="https://instagram.com/chikoo" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @chikoo</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/Dg8gC5fb/Muhammad-Kurniawan.jpg" alt="Muhammad Kurniawan" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/Dg8gC5fb/Muhammad-Kurniawan.jpg" alt="Muhammad Kurniawan" class="member-photo">
+                </div>
                 <h3>Muhammad Kurniawan</h3>
                 <a href="https://instagram.com/kurniawan_m" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @kurniawan_m</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/xq8t6L5t/Bayu-Syahbil-Rohmat.jpg" alt="Bayu Syahbil Rohmat" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/xq8t6L5t/Bayu-Syahbil-Rohmat.jpg" alt="Bayu Syahbil Rohmat" class="member-photo">
+                </div>
                 <h3>Bayu Syahbil Rohmat</h3>
                 <a href="https://instagram.com/bayusyahbil" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @bayusyahbil</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/V0vm0fBx/Muhammad-Ridho-Nugroho.jpg" alt="Muhammad Ridho Nugroho" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/V0vm0fBx/Muhammad-Ridho-Nugroho.jpg" alt="Muhammad Ridho Nugroho" class="member-photo">
+                </div>
                 <h3>Muhammad Ridho Nugroho</h3>
                 <a href="https://instagram.com/m.ridhonugroho" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @m.ridhonugroho</a>
             </div>
+
             <div class="member-card reveal">
-                <img src="https://i.ibb.co.com/xq5DSNPZ/Kevin-Ridho-Peter-Leleuly.jpg" alt="Kevin Ridho Peter Leleuly" class="member-photo">
+                <div class="member-photo-wrapper">
+                    <img src="https://i.ibb.co.com/xq5DSNPZ/Kevin-Ridho-Peter-Leleuly.jpg" alt="Kevin Ridho Peter Leleuly" class="member-photo">
+                </div>
                 <h3>Kevin Ridho Peter Leleuly</h3>
                 <a href="https://instagram.com/kevinleleuly" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @kevinleleuly</a>
             </div>
+
             <div class="member-card reveal">
-                <div class="member-avatar">WB</div>
+                <div class="member-photo-wrapper">
+                    <div class="member-avatar">WB</div>
+                </div>
                 <h3>Layang Jamus Kalimasada</h3>
                 <a href="https://instagram.com/layangjamus" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @layangjamus</a>
             </div>
+
             <div class="member-card reveal">
-                <div class="member-avatar">WB</div>
+                <div class="member-photo-wrapper">
+                    <div class="member-avatar">WB</div>
+                </div>
                 <h3>KING NOPAL</h3>
                 <a href="https://instagram.com/kingnopal" target="_blank" class="member-ig"><i class="fa-brands fa-instagram"></i> @kingnopal</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION FOTO BERSAMA (MASONRY LAYOUT WITH CROP) -->
+    <!-- SECTION FOTO BERSAMA -->
     <section class="content-section" id="foto-bersama">
         <div class="section-header reveal">
             <h2>FOTO BERSAMA</h2>
@@ -914,13 +965,15 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
 
-        // Lightbox Popup
+        // Lightbox Popup (Gabungan Foto Bersama & Foto Anggota)
         const lightboxModal = document.getElementById('lightboxModal');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
-        const galleryItems = document.querySelectorAll('.gallery-item img');
+        
+        // Memilih semua gambar baik di Galeri Foto Bersama maupun Profil Anggota
+        const allClickableImages = document.querySelectorAll('.gallery-item img, .member-photo');
 
-        galleryItems.forEach(img => {
+        allClickableImages.forEach(img => {
             img.addEventListener('click', () => {
                 lightboxModal.classList.add('active');
                 lightboxImg.src = img.src;
